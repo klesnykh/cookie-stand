@@ -1,8 +1,8 @@
 'use strict';
 
 
-let profileContainer = document.getElementById('cities');
-console.log(profileContainer);
+let cities = document.getElementById('cities');
+console.log(cities);
 
 let hour = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ',];
 
@@ -37,7 +37,7 @@ let seattle = {
       cookiesByHour.appendChild(time);
     }
   }
-}
+};
 seattle.fillArr();
 
 let tokyo = {
@@ -71,7 +71,7 @@ let tokyo = {
       cookiesByHour.appendChild(time);
     }
   }
-}
+};
 tokyo.fillArr();
 
 let dubai = {
@@ -105,7 +105,7 @@ let dubai = {
       cookiesByHour.appendChild(time);
     }
   }
-}
+};
 dubai.fillArr();
 
 let paris = {
@@ -139,7 +139,7 @@ let paris = {
       cookiesByHour.appendChild(time);
     }
   }
-}
+};
 paris.fillArr();
 
 let lima = {
@@ -173,8 +173,8 @@ let lima = {
       cookiesByHour.appendChild(time);
     }
   }
-}
-lima.fillArr();``
+};
+lima.fillArr();
 
 seattle.printCity();
 tokyo.printCity();
