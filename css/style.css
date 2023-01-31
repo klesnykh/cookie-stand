@@ -3,7 +3,7 @@
 } */
 
 body {
-  background-image: url("/img/salmon.jpg");
+  background-image: url("../img/salmon.jpg");
   background-size: 150px;
   width: 300px;
   height: 300px;
@@ -22,7 +22,7 @@ section {
 
 @font-face {
   font-family: Itim;
-  src: url(/font/Itim-Regular.ttf)
+  src: url(../font/Itim-Regular.ttf)
 }
 
 div {
