@@ -4,7 +4,7 @@ let cityTableBody = document.querySelector('tbody');
 let cityTableHead = document.querySelector('thead');
 let cityTableFoot = document.querySelector('tfoot');
 
-let hour = ['', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
+let hour = ['', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
 
 function fillCityTableHeadings(){
   for(let i=0; i<hour.length; i++){
@@ -33,12 +33,20 @@ function City (name, min, max, avg) {
     tr.appendChild(th);
     this.arr.push(this.name);
 
-    for (let i=1; i<hour.length; i++){
+    for (let i=1; i<hour.length-1; i++){
       let td = document.createElement('td');
       td.textContent = this.cookiesSold();
       tr.appendChild(td);
       this.arr.push(parseInt(td.textContent));
     }
+    let dayTotal = 0;
+    for (let i=1; i<this.arr.length; i++){
+      dayTotal+=this.arr[i];
+    }
+    let td = document.createElement('td');
+    td.textContent = dayTotal;
+    tr.appendChild(td);
+    this.arr.push(dayTotal);
   };
 }
 
@@ -49,12 +57,11 @@ function fillTableTotals(){
   for(let i=1; i<hour.length; i++){
     let total = document.createElement('td');
     total.textContent = seattle.arr[i]+tokyo.arr[i]+dubai.arr[i]+paris.arr[i]+lima.arr[i];
-    // console.log(total.textContent);
     cityTableFoot.appendChild(total);
   }
 }
 
-let seattle = new City('Seattle', 23, 65, 6.3);``
+let seattle = new City('Seattle', 23, 65, 6.3);
 seattle.fillTable();
 
 let tokyo = new City('Tokyo', 3, 24, 1.2);
