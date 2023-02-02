@@ -8,11 +8,13 @@ body {
 }
 
 header {
+  border: 1px solid black;
   display: block;
   background: transparent;
   width: 900px;
   margin: auto;
 }
+
 a {
   font-size: 2rem;
   padding-left: 2rem;
@@ -21,7 +23,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
 main {
   display: flex;
   flex-wrap: wrap;
@@ -93,4 +94,8 @@ footer{
   margin-top: auto;
   display: flex;
   justify-content: center;
+}
+
+form {
+  border: 1px solid black;
 }

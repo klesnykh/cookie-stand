@@ -14,17 +14,43 @@
     <h1>Salmon Cookies</h1>
     <a href="index.html">Home</a>
   </header>
-  <table>
-    <thead>
+  <main>
+    <aside>
+      <form id="form">
+        <fieldset>
+          <legend>Add City</legend>
+          
+          <label for="cityName">City name:
+            <input type="text" placeholder="ex. Stockholm" id="nameOfCity" name = "cityName" required>
+          </label>
+            
+          <label>Minimum Customers:
+            <input type="number" min="0" id="minCustomers" name="min" required>
+          </label>
 
-    </thead>
-    <tbody>
+          <label>Maximum Customers:
+            <input type="number" id="maxCustomers" name="max" required>
+          </label>
 
-    </tbody>
-    <tfoot>
-      
-    </tfoot>
-  </table>
+          <label>Avg Cookies Sold per Customer:
+            <input type="number" id="avgCookies" name="avg" required>
+          </label>
+          <input type="submit" value="Submit City">
+        </fieldset>
+      </form>
+    </aside>
+    <table>
+      <thead>
+
+      </thead>
+      <tbody>
+
+      </tbody>
+      <tfoot>
+        
+      </tfoot>
+    </table>
+  </main>
   <script src="app.js"></script>
 </body>
 </html>

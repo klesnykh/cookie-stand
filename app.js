@@ -6,6 +6,8 @@ let cityTableFoot = document.querySelector('tfoot');
 
 let hour = ['', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
 
+let cityArrays = [];
+
 function fillCityTableHeadings(){
   for(let i=0; i<hour.length; i++){
     let th = document.createElement('th');
@@ -47,17 +49,30 @@ function City (name, min, max, avg) {
     td.textContent = dayTotal;
     tr.appendChild(td);
     this.arr.push(dayTotal);
+    cityArrays.push(this.arr);
   };
 }
 
 function fillTableTotals(){
+  console.log('in table totals');
+  let tr = document.createElement('tr');
+  cityTableFoot.appendChild(tr);
+
   let th = document.createElement('th');
   th.textContent = 'Totals:';
-  cityTableFoot.appendChild(th);
+  tr.appendChild(th);
+  //console.log(th.textContent);
+  console.log(cityArrays);
   for(let i=1; i<hour.length; i++){
-    let total = document.createElement('td');
-    total.textContent = seattle.arr[i]+tokyo.arr[i]+dubai.arr[i]+paris.arr[i]+lima.arr[i];
-    cityTableFoot.appendChild(total);
+    let t = document.createElement('td');
+    let total = 0;
+    for(let j=0; j<cityArrays.length;j++){
+      total+=cityArrays[j][i];
+      console.log(cityArrays[j][i], total);
+    }
+    //console.log('in fill table totals first loop')
+    t.textContent = total;
+    tr.appendChild(t);
   }
 }
 
@@ -77,3 +92,23 @@ let lima = new City('Lima', 2, 16, 4.6);
 lima.fillTable();
 
 fillTableTotals();
+
+
+
+let cityForm = document.querySelector('form');
+``
+let handleSubmit = function(event){
+  event.preventDefault();
+  console.log('inHandleSubmit');
+  let cityName = event.target.cityName.value;
+  let min = event.target.min.value;
+  let max = event.target.max.value;
+  let avg = event.target.avg.value;
+
+  let newCity = new City(cityName, min, max, avg);
+  cityTableFoot.lastChild.remove();
+  newCity.fillTable();
+  fillTableTotals();
+};
+
+cityForm.addEventListener('submit', handleSubmit);
