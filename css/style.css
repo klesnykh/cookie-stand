@@ -10,11 +10,16 @@ body {
 header {
   display: block;
   background: transparent;
-
+  width: 900px;
+  margin: auto;
 }
 a {
-  font-size: 3rem;
-
+  font-size: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color:rgb(108, 69, 56);
+  color: white;
+  text-decoration: none;
 }
 
 main {
@@ -23,6 +28,7 @@ main {
   justify-content: center;
   justify-self: center;
   width: 900px;
+  margin: auto;
 }
 
 section {
