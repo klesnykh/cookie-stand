@@ -1,12 +1,42 @@
-/* body {
-  background-image: url("/img/salmon.jpg");
-} */
 
 body {
-  background-image: url("../img/salmon.jpg");
-  background-size: 103px;
-  width: 250px;
-  height: 250px;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  display: block;
+  background: transparent;
+
+}
+a {
+  font-size: 3rem;
+
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-self: center;
+  width: 900px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-width: 2px;
+  border-style: groove;
+  border-color: black;
+  margin: 15px;
+}
+
+img {
+  margin: 15px;
 }
 
 td {
@@ -38,11 +68,23 @@ div {
 h1 {
   font-size: 6rem;
   font-family: Itim;
-  color: salmon;
+  color: rgb(142, 90, 73);
 }
 
 h3 {
   font-size: 2rem;
   padding: .5rem;
-  color: salmon;
+  color: rgb(137, 69, 62);
+}
+
+h4 {
+  font-size: 2rem;
+  padding: .5rem;
+  color: rgb(137, 69, 62);
+}
+
+footer{
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
 }
