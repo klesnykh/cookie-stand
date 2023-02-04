@@ -96,14 +96,14 @@ fillTableTotals();
 
 
 let cityForm = document.querySelector('form');
-``
+
 let handleSubmit = function(event){
   event.preventDefault();
   console.log('inHandleSubmit');
   let cityName = event.target.cityName.value;
-  let min = event.target.min.value;
-  let max = event.target.max.value;
-  let avg = event.target.avg.value;
+  let min = parseInt(event.target.min.value);
+  let max = parseInt(event.target.max.value);
+  let avg = parseInt(event.target.avg.value);
 
   let newCity = new City(cityName, min, max, avg);
   cityTableFoot.lastChild.remove();

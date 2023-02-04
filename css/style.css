@@ -1,6 +1,9 @@
+*{
+  box-sizing: border-box;
+}
 
 body {
-  background-image: linear-gradient(to bottom right, red, yellow);
+  background-image: linear-gradient(to bottom right, rgb(132, 83, 67), silver);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,15 +11,33 @@ body {
 }
 
 header {
-  border: 1px solid black;
-  display: block;
-  background: transparent;
-  width: 900px;
+  display: flex;
+  /* border: 1px solid black; */
+  background: url("../img/salmon.png");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  width: 852px;
   margin: auto;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.left img {
+  width:50%
+}
+
+.left{
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  align-content: center;
 }
 
 a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   background-color:rgb(108, 69, 56);
@@ -26,24 +47,35 @@ a {
 main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   justify-self: center;
   width: 900px;
   margin: auto;
+  align-items: center;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-width: 2px;
-  border-style: groove;
-  border-color: black;
-  margin: 15px;
+.storeLocations {
+  width: 45%;
+}
+
+main p {
+  width: 45%;
 }
 
 img {
   margin: 15px;
+  height: auto;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+legend {
+  font-size: 2rem;
+  color: antiquewhite;
 }
 
 td {
@@ -61,7 +93,10 @@ th {
   border-width: .1px;
   font-size: 1.1rem;
   font-weight: bold;
+  vertical-align: middle;
 }
+
+
 
 @font-face {
   font-family: Itim;
@@ -73,9 +108,13 @@ div {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-family: Itim;
-  color: rgb(142, 90, 73);
+  color: rgb(237, 151, 122);
+}
+
+h2{
+  font-size: 2rem;
 }
 
 h3 {
@@ -90,12 +129,45 @@ h4 {
   color: rgb(137, 69, 62);
 }
 
-footer{
-  margin-top: auto;
+h5 {
+  font-size: 2rem;
+  padding: .5rem;
+  color: white;
+}
+
+.images {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.images img {
+  width: 23%;
+}
+
+
+
+
+footer{
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  width: 852px;
+}
+
+.storeLocations {
+  display: flex;
+  width: 852px;
+  flex-direction: column;
 }
 
 form {
   border: 1px solid black;
+}
+
+.line{
+  background: url("../img/chinook.png");
+  background-position: center;
+  background-position: top;
+  background-size: 15%;
 }
